@@ -19,7 +19,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/dist', '**/*.config.*'],
+    ignores: ['**/dist', '**/*.config.*', '**/.react-router/types/**'],
   },
   ...fixupConfigRules(
     compat.extends(

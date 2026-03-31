@@ -25,3 +25,6 @@ dist-ssr
 .env
 
 .react-router
+
+playwright-report
+test-results
