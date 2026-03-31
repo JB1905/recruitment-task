@@ -1,7 +1,7 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
 import { expectPackageVisibility } from './assertions';
-import { goBackToUsers, openUserDetails, selectCompany } from './commands';
+import { goBackToUsers, openUserDetails } from './commands';
 
 test.describe('Users', () => {
   test('navigates between users and shows packages based on company access', async ({
@@ -11,22 +11,7 @@ test.describe('Users', () => {
 
     await openUserDetails(page, 'Dominic Nitzsche');
     await expectPackageVisibility(page, {
-      shown: ['Kittens'],
-      hidden: ['Random Number'],
-      showsFallbackMessage: false,
-    });
-
-    await selectCompany(page, '2');
-    await expectPackageVisibility(page, {
-      shown: ['Random Number'],
-      hidden: ['Kittens', 'Companies'],
-      showsFallbackMessage: false,
-    });
-
-    await selectCompany(page, '4');
-    await expectPackageVisibility(page, {
-      shown: ['Companies'],
-      hidden: ['Kittens', 'Random Number'],
+      shown: ['Companies', 'Kittens', 'Random Number'],
       showsFallbackMessage: false,
     });
     await expect(
@@ -41,7 +26,14 @@ test.describe('Users', () => {
     await expect(
       page.getByRole('heading', { name: 'Hirthe and Sons' }),
     ).toBeVisible();
-    await expect(page.getByText('Dominic Nitzsche')).toBeVisible();
+
+    const companiesSection = page
+      .locator('section')
+      .filter({ has: page.getByRole('heading', { name: 'Companies' }) });
+
+    await expect(
+      companiesSection.getByText('Dominic Nitzsche').first(),
+    ).toBeVisible();
 
     await goBackToUsers(page);
 

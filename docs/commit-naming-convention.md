@@ -9,7 +9,7 @@ This project enforces [Conventional Commits](https://www.conventionalcommits.org
 ```
 
 - **type** — the kind of change (see table below)
-- **scope** — optional, the area of the codebase affected (e.g. `users`, `auth`, `api`)
+- **scope** — optional, the area of the codebase affected (e.g. `users`, `auth`, `services`)
 - **subject** — short imperative description in lowercase, no trailing period
 
 ## Types
@@ -31,7 +31,7 @@ This project enforces [Conventional Commits](https://www.conventionalcommits.org
 
 ```
 feat(users): add user detail page
-fix(api): handle 401 response in axios interceptor
+fix(services): handle 401 response in data service
 refactor(types): move shared user types to src/types/entities
 docs: update project structure doc
 chore: upgrade react-router to 7.13.2

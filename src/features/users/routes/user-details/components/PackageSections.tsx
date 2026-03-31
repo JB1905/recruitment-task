@@ -4,20 +4,20 @@ import { useTranslation } from 'react-i18next';
 import { FallbackMessage } from '@/components/FallbackMessage';
 
 import type {
+  PackageData,
   PackageDefinition,
-  PackageRenderContext,
 } from '../utils/getPackageDefinitions';
 
 interface PackageSectionsProps {
   packages: string[];
   packageDefinitions: PackageDefinition[];
-  packageRenderContext: PackageRenderContext;
+  packageData: PackageData;
 }
 
 export const PackageSections = ({
   packages,
   packageDefinitions,
-  packageRenderContext,
+  packageData,
 }: PackageSectionsProps) => {
   const { t } = useTranslation('users');
 
@@ -42,7 +42,7 @@ export const PackageSections = ({
               {label}
             </Heading>
 
-            {renderComponent(packageRenderContext)}
+            {renderComponent(packageData)}
           </VStack>
         );
       })}

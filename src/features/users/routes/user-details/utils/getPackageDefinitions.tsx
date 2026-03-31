@@ -9,10 +9,10 @@ import type { Company as CompanyEntity, User } from '@/types/entities';
 export interface PackageDefinition {
   label: string;
   key: string;
-  renderComponent: (context: PackageRenderContext) => React.ReactNode;
+  renderComponent: (context: PackageData) => React.ReactNode;
 }
 
-export interface PackageRenderContext {
+export interface PackageData {
   allUsers: User[];
   userCompanies: CompanyEntity[];
 }
@@ -31,17 +31,8 @@ export const getPackageDefinitions = (
     renderComponent: () => createElement(RandomNumber),
   },
   {
-    label: t('detail.packages.company.title'),
+    label: t('detail.packages.company'),
     key: 'company',
-    renderComponent: ({ allUsers, userCompanies }) =>
-      createElement(Company, {
-        companies: userCompanies,
-        users: allUsers,
-      }),
-  },
-  {
-    label: t('detail.packages.company.title'),
-    key: 'comapny',
     renderComponent: ({ allUsers, userCompanies }) =>
       createElement(Company, {
         companies: userCompanies,

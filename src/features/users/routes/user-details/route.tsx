@@ -1,13 +1,11 @@
-import { Box, Button, VStack } from '@chakra-ui/react';
+import { Button, VStack } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { href, Link, useLoaderData } from 'react-router';
 
-import { Select } from '@/components/Select';
-
 import { PackageSections } from './components/PackageSections';
 import { ProfileCard } from './components/ProfileCard';
-import { useSelectedCompany } from './hooks/useSelectedCompany';
 import type { userDetailsLoader } from './loader';
+import { getAccessiblePackages } from './utils/getAccessiblePackages';
 import { getPackageDefinitions } from './utils/getPackageDefinitions';
 
 export const UserDetailsRoute = () => {
@@ -15,8 +13,7 @@ export const UserDetailsRoute = () => {
   const { user, userCompanies, allUsers } =
     useLoaderData<typeof userDetailsLoader>();
 
-  const { selectedCompanyId, setSelectedCompanyId, selectedCompany, packages } =
-    useSelectedCompany(userCompanies);
+  const packages = getAccessiblePackages(userCompanies);
   const packageDefinitions = getPackageDefinitions(t);
 
   return (
@@ -31,24 +28,10 @@ export const UserDetailsRoute = () => {
         name={user?.name}
       />
 
-      {userCompanies.length > 1 && selectedCompany && (
-        <Box w="full" maxW={{ base: 'full', md: 'xs' }}>
-          <Select
-            label={t('detail.companySelectLabel')}
-            value={selectedCompanyId}
-            onChange={setSelectedCompanyId}
-            options={userCompanies.map((company) => ({
-              label: company.name,
-              value: company.id,
-            }))}
-          />
-        </Box>
-      )}
-
       <PackageSections
         packages={packages}
         packageDefinitions={packageDefinitions}
-        packageRenderContext={{
+        packageData={{
           allUsers,
           userCompanies,
         }}
