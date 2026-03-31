@@ -12,7 +12,7 @@ interface CompanyProps {
 }
 
 export const Company = ({ companies, users }: CompanyProps) => {
-  const { t } = useTranslation('users');
+  const { t } = useTranslation('company');
 
   return (
     <VStack align="stretch" gap={4} w="full">
@@ -39,9 +39,7 @@ export const Company = ({ companies, users }: CompanyProps) => {
                 ))}
               </List.Root>
             ) : (
-              <FallbackMessage>
-                {t('detail.packages.company.noUsers')}
-              </FallbackMessage>
+              <FallbackMessage>{t('noUsers')}</FallbackMessage>
             )}
           </Box>
         );

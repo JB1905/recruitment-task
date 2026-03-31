@@ -6,21 +6,21 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-interface DataTableProps<TData> {
+interface DataTableProps<TData, TValue> {
   data: TData[];
-  columns: ColumnDef<TData, any>[];
+  columns: ColumnDef<TData, TValue>[];
   striped?: boolean;
   interactive?: boolean;
   onRowClick?: (row: TData) => void;
 }
 
-export const DataTable = <TData,>({
+export const DataTable = <TData, TValue>({
   data,
   columns,
   striped = false,
   interactive = false,
   onRowClick,
-}: DataTableProps<TData>) => {
+}: DataTableProps<TData, TValue>) => {
   const table = useReactTable({
     data,
     columns,

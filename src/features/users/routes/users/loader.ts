@@ -1,4 +1,4 @@
-import { getUsers } from '@/api/users';
+import { getUsers } from '@/services/users';
 
 export const usersLoader = () => {
   return { users: getUsers() };

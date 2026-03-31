@@ -23,7 +23,7 @@ Context for AI agents working on **Recruitment Task**: a React web application.
   - Features can use packages, but should not depend on other features
 - `src/packages/` — smaller reusable modules that expose UI and/or logic
   - Packages can depend on other packages, but not on features
-- `src/api/` — shared top-level API accessors
+- `src/services/` — shared top-level data access services
 - `src/components/` — shared cross-feature components
 - `src/config/` — app configuration such as `i18n` and Chakra theme
 - `src/stores/` — global stores

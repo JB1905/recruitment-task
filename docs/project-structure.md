@@ -9,7 +9,7 @@ This document describes the layout of the project.
 ├── docs/                       # Architecture & convention docs
 ├── e2e/                        # Playwright end-to-end tests
 ├── src/
-│   ├── api/                    # Top-level API re-exports (delegates to features)
+│   ├── services/               # Top-level data access services
 │   ├── components/             # Shared components
 │   ├── config/                 # App config such as i18n and theme
 │   ├── constants/              # Enums and constants
@@ -92,6 +92,7 @@ Packages are smaller reusable modules that can expose UI, hooks, utilities, or p
 src/packages/
 ├── company/
 │   ├── components/
+│   ├── locales/
 │   ├── index.ts
 │   └── utils/
 ├── kittens/
@@ -120,11 +121,11 @@ Packages can depend on other packages, but must not depend on features.
 
 | File | Purpose |
 |------|---------|
-| `api.ts` | API-related enums such as `HttpStatus` |
+| `network.ts` | Network-related enums such as `HttpStatus` |
 
 ## Directory Intent
 
-- `src/api/` — shared API accessors used across the app
+- `src/services/` — shared data access services used across the app
 - `src/components/` — shared cross-feature UI components
 - `src/hooks/` — global hooks such as app-level initialization or auth hooks
 - `src/stores/` — global state stores
