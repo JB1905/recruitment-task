@@ -1,0 +1,83 @@
+{
+  "name": "recruitment-task",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "tsc && react-router build",
+    "preview": "vite preview",
+    "types:check": "tsc --noEmit",
+    "typegen": "react-router typegen",
+    "lint": "eslint --cache \"**/*.{ts,tsx}\" --fix",
+    "lint:check": "eslint --cache \"**/*.{ts,tsx}\"",
+    "format": "prettier --write \"**/*.{js,jsx,cjs,json,ts,tsx,html}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,cjs,json,ts,tsx,html}\"",
+    "test": "jest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "commitlint": "commitlint --edit $1",
+    "postinstall": "npm run typegen",
+    "pre-commit": "lint-staged && npm run build",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.34.0",
+    "@emotion/react": "^11.14.0",
+    "@react-router/node": "^7.13.2",
+    "@tanstack/react-table": "^8.21.3",
+    "axios": "^1.13.6",
+    "i18next": "^25.10.9",
+    "isbot": "^5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^16.6.6",
+    "react-router": "^7.13.2",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@chakra-ui/cli": "^3.34.0",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@eslint/compat": "^2.0.3",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.52.0",
+    "@react-router/dev": "^7.13.2",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "@vitejs/plugin-react": "^4.5.1",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "jest": "^30.3.0",
+    "lint-staged": "^16.4.0",
+    "prettier": "3.8.1",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "vite": "^6.3.5",
+    "vite-tsconfig-paths": "^6.1.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,cjs,json,ts,tsx,html}": [
+      "npm run format"
+    ],
+    "**/*.{ts,tsx}": [
+      "npm run lint",
+      "bash -c 'npm run types:check'"
+    ]
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

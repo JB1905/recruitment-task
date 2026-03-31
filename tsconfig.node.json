@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["vite.config.ts", "react-router.config.ts", "./package.json"]
+}

@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "rootDirs": [".", "./.react-router/types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@recruitment-task/kittens": ["src/packages/kittens/index.ts"],
+      "@recruitment-task/random-number": ["src/packages/random-number/index.ts"]
+    }
+  },
+  "include": ["src", ".react-router/types/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

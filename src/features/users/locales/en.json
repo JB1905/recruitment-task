@@ -1,0 +1,22 @@
+{
+  "list": {
+    "columns": {
+      "name": "Name",
+      "createdAt": "Created At"
+    }
+  },
+  "detail": {
+    "backToList": "Back to users",
+    "memberSince": "Member since {{date}}",
+    "companySelectLabel": "Company",
+    "noPackages": "No packages enabled for this company.",
+    "packages": {
+      "company": {
+        "noUsers": "No users assigned to this company.",
+        "title": "Companies"
+      },
+      "kittens": "Kittens",
+      "randomNumber": "Random Number"
+    }
+  }
+}
