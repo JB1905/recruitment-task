@@ -27,7 +27,7 @@ This document outlines the technical choices made for this project.
 
 **Local mocks**
 
-- The current implementation reads from local mock JSON files in `src/mocks/` through shared API accessors in `src/api/`.
+- The current implementation reads from local mock JSON files in `src/mocks/` through shared data access services in `src/services/`.
 - Runtime environment configuration is currently limited to `VITE_KITTENS_BASE_URL`.
 
 ## Architecture

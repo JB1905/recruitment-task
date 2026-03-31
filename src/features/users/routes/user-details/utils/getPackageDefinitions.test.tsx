@@ -46,11 +46,7 @@ describe('getPackageDefinitions', () => {
       },
       {
         key: 'company',
-        label: 'translated:detail.packages.company.title',
-      },
-      {
-        key: 'comapny',
-        label: 'translated:detail.packages.company.title',
+        label: 'translated:detail.packages.company',
       },
     ]);
   });

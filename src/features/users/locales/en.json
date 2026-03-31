@@ -8,13 +8,9 @@
   "detail": {
     "backToList": "Back to users",
     "memberSince": "Member since {{date}}",
-    "companySelectLabel": "Company",
-    "noPackages": "No packages enabled for this company.",
+    "noPackages": "No packages enabled for this user.",
     "packages": {
-      "company": {
-        "noUsers": "No users assigned to this company.",
-        "title": "Companies"
-      },
+      "company": "Companies",
       "kittens": "Kittens",
       "randomNumber": "Random Number"
     }

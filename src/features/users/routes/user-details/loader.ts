@@ -1,8 +1,8 @@
 import type { LoaderFunctionArgs } from 'react-router';
 
-import { getCompaniesByUserId } from '@/api/companies';
-import { getUsers } from '@/api/users';
-import { HttpStatus } from '@/constants/api';
+import { HttpStatus } from '@/constants/network';
+import { getCompaniesByUserId } from '@/services/companies';
+import { getUsers } from '@/services/users';
 
 export const userDetailsLoader = ({ params }: LoaderFunctionArgs) => {
   const userId = params.id!;
